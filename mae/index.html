@@ -665,6 +665,56 @@ body {
   line-height: 1.6;
 }
 
+/* === CHECKLIST EXAMES === */
+.check-section {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+}
+.check-grupo { margin-bottom: 22px; }
+.check-grupo:last-child { margin-bottom: 0; }
+.check-grupo-titulo {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--gold-soft);
+}
+.check-grupo-titulo .ico { font-size: 22px; }
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+}
+.check-box {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--gold);
+  border-radius: 5px;
+  margin-top: 2px;
+}
+.check-conteudo { flex: 1; min-width: 0; }
+.check-nome {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+.check-quando {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.check-quando strong { color: var(--gold); font-weight: 600; }
+
 /* === MOBILE === */
 @media (max-width: 640px) {
   body { font-size: 17px; }
@@ -695,6 +745,10 @@ body {
   .caminhada-item-value { font-size: 16px; }
   .footer-msg { font-size: 22px; }
   .footer-small { font-size: 15px; }
+  .check-section { padding: 22px 20px; }
+  .check-grupo-titulo { font-size: 20px; }
+  .check-nome { font-size: 16px; }
+  .check-quando { font-size: 15px; }
 }
 
 /* === PRINT === */
@@ -717,20 +771,6 @@ body {
     <div class="super">✨ Feito especialmente para você</div>
     <h1>O plano da <span class="nome">Ana Clara</span><br>para viver bem 💛</h1>
     <p class="sub">Pesquisei cada item aqui com muito cuidado — para fortalecer os ossos, cuidar da pressão e dar mais leveza ao dia a dia. Quero que você saiba o porquê de cada coisa.</p>
-    <div class="meta">
-      <div>
-        <div class="meta-label">Preparado por</div>
-        <div class="meta-value">Seu filho 💛</div>
-      </div>
-      <div>
-        <div class="meta-label">Quando</div>
-        <div class="meta-value">Maio 2026</div>
-      </div>
-      <div>
-        <div class="meta-label">Para conversar com</div>
-        <div class="meta-value">Sua médica</div>
-      </div>
-    </div>
   </header>
 
   <!-- ============ CARTA ============ -->
@@ -741,7 +781,7 @@ body {
 
   <!-- ============ PARTE 1: VITAMINAS ============ -->
   <h2 class="section-title"><span class="num">Parte 1</span> Suas vitaminas no dia</h2>
-  <p class="section-intro">Cinco momentos do dia, cinco cuidados simples. Não é muita coisa — só consistência. <em>* Conversar com a médica antes de começar.</em></p>
+  <p class="section-intro">Cinco momentos do dia, cinco cuidados simples. Não é muita coisa — só consistência. <em>* Vale conversar com a médica sobre este plano.</em></p>
 
   <!-- JEJUM -->
   <div class="bloco">
@@ -825,7 +865,7 @@ body {
             <div class="sup-nome">Creatina</div>
             <span class="sup-dose">1 colher de chá rasa</span>
           </div>
-          <div class="sup-porque">Muito estudada para pessoas a partir dos 60 anos. <strong>Mantém força e disposição</strong>, melhora o equilíbrio e colabora no controle do açúcar.</div>
+          <div class="sup-porque">Muito estudada para pessoas a partir dos 60 anos. <strong>Mantém força e disposição</strong>, melhora o equilíbrio e ajuda numa vida mais ativa.</div>
           <div class="sup-como">Dissolver em água, suco ou iogurte. Não tem sabor. Todo dia, sem falta.</div>
         </div>
       </div>
@@ -935,7 +975,7 @@ body {
           <li>Ovo mexido, queijo branco, peixe desfiado</li>
           <li>Frango cozido no ensopado ou sopa</li>
           <li>Iogurte natural integral</li>
-          <li>Feijão bem cozido ou amassado</li>
+          <li>Feijão bem cozido</li>
           <li><strong>Por quê:</strong> mantém os músculos firmes</li>
         </ul>
       </div>
@@ -946,7 +986,7 @@ body {
           <li>Sem refrigerante, suco de caixinha ou de pacote</li>
           <li>Café sem açúcar — você se acostuma rápido</li>
           <li>Trocar bolo e biscoito por fruta ou iogurte natural</li>
-          <li><strong>Por quê:</strong> alivia joelho, peso e açúcar no sangue</li>
+          <li><strong>Por quê:</strong> ajuda no joelho, no peso e na energia do dia</li>
         </ul>
       </div>
 
@@ -964,7 +1004,7 @@ body {
         <div class="comida-grupo-titulo"><span class="ico">🥣</span> Sopas e ensopados (suas favoritas)</div>
         <ul>
           <li>Sopa de legumes com frango desfiado</li>
-          <li>Caldo de feijão com legumes amassados</li>
+          <li>Caldo de feijão com legumes</li>
           <li>Canja com cenoura e abobrinha</li>
           <li>Sopa de abóbora com gengibre</li>
           <li>Ensopado de peixe com batata-doce</li>
@@ -1025,7 +1065,7 @@ body {
         <div class="comida-grupo-titulo"><span class="ico">🍲</span> Almoço <span style="font-weight:400;color:var(--text-muted);">— 12h30</span></div>
         <ul>
           <li><strong>Arroz</strong> com fio de azeite</li>
-          <li><strong>Feijão bem cozido</strong> (pode amassar)</li>
+          <li><strong>Feijão bem cozido</strong></li>
           <li><strong>Frango ensopado</strong> ou peixe desfiado</li>
           <li><strong>Legumes assados</strong>: abobrinha, cenoura, batata-doce</li>
           <li>Salada de tomate bem maduro com azeite</li>
@@ -1319,7 +1359,7 @@ body {
     <div class="dica">
       <span class="dica-icon">🍬</span>
       <div class="dica-titulo">Cortar o açúcar</div>
-      <div class="dica-texto">Pelo Glifage, vale <strong>cortar refrigerante, suco de caixinha, bolo e biscoito</strong>. Preferir frutas inteiras, aveia e batata-doce. Isso cuida do coração, dos rins e da disposição.</div>
+      <div class="dica-texto">Vale <strong>cortar refrigerante, suco de caixinha, bolo e biscoito</strong>. Preferir frutas inteiras, aveia e batata-doce. Isso cuida do coração, dos rins e da disposição.</div>
     </div>
 
     <div class="dica">
@@ -1367,7 +1407,188 @@ body {
     <div class="dica">
       <span class="dica-icon">⏰</span>
       <div class="dica-titulo">Horários regulares</div>
-      <div class="dica-texto">Comer, dormir e tomar os remédios <strong>sempre nos mesmos horários</strong>. O corpo na terceira idade gosta de rotina — ajuda na digestão, no sono e no controle do açúcar e da pressão.</div>
+      <div class="dica-texto">Comer, dormir e tomar os remédios <strong>sempre nos mesmos horários</strong>. O corpo na terceira idade gosta de rotina — ajuda na digestão, no sono e na pressão.</div>
+    </div>
+
+  </div>
+
+  <!-- ============ CHECKLIST VITAMINAS (COMPRA) ============ -->
+  <h2 class="section-title"><span class="num">Parte 6</span> Lista das vitaminas</h2>
+  <p class="section-intro">Os suplementos do plano, para conferir o estoque e repor quando estiver acabando.</p>
+
+  <div class="check-section">
+    <div class="check-grupo">
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Colágeno Tipo II (UC-II)</div>
+          <div class="check-quando">1 cápsula por dia</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Vitamina D3 + K2</div>
+          <div class="check-quando">1 cápsula por dia</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Ômega-3 (EPA + DHA)</div>
+          <div class="check-quando">2 cápsulas por dia</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Vitamina B12 (metilcobalamina)</div>
+          <div class="check-quando">1 comprimido sublingual por dia</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Creatina monoidratada</div>
+          <div class="check-quando">1 colher de chá por dia</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Magnésio bisglicinato</div>
+          <div class="check-quando">1 cápsula por dia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKLIST EXAMES ============ -->
+  <h2 class="section-title"><span class="num">Parte 7</span> Exames e médicos em dia</h2>
+  <p class="section-intro">Uma listinha para acompanhar com a médica. Marcar conforme for fazendo — assim nada fica esquecido. <em>* Os intervalos são uma referência; a médica ajusta conforme o seu caso.</em></p>
+
+  <div class="check-section">
+
+    <div class="check-grupo">
+      <div class="check-grupo-titulo"><span class="ico">🩸</span> Exames de sangue</div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Hemograma completo e glicemia</div>
+          <div class="check-quando"><strong>1 vez por ano</strong> — rotina geral de saúde</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Vitamina B12, magnésio e vitamina D</div>
+          <div class="check-quando"><strong>1 vez por ano</strong> — acompanhar os suplementos do plano</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Função dos rins (ureia, creatinina) e fígado</div>
+          <div class="check-quando"><strong>1 vez por ano</strong> — rotina para quem toma remédios contínuos</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Colesterol e triglicérides</div>
+          <div class="check-quando"><strong>1 vez por ano</strong> — saúde do coração</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="check-grupo">
+      <div class="check-grupo-titulo"><span class="ico">❤️</span> Coração e pressão</div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Consulta com cardiologista</div>
+          <div class="check-quando"><strong>1 vez por ano</strong> — acompanhar a pressão (Haradois H)</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Eletrocardiograma + medir pressão em casa</div>
+          <div class="check-quando"><strong>Conforme o cardiologista</strong> — anotar a pressão algumas vezes na semana ajuda muito</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="check-grupo">
+      <div class="check-grupo-titulo"><span class="ico">🦴</span> Ossos e articulações</div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Densitometria óssea</div>
+          <div class="check-quando"><strong>A cada 1 a 2 anos</strong> — acompanhar a osteoporose</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Avaliação do joelho (ortopedista)</div>
+          <div class="check-quando"><strong>Se a dor aumentar</strong> — cuidar da artrose de perto</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="check-grupo">
+      <div class="check-grupo-titulo"><span class="ico">🦷</span> Boca e olhos</div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Dentista — não esquecer! 🦷</div>
+          <div class="check-quando"><strong>A cada 6 meses</strong> — boca saudável ajuda a mastigar bem e protege o corpo todo</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Oftalmologista (vista)</div>
+          <div class="check-quando"><strong>1 vez por ano</strong> — catarata e glaucoma são comuns na idade</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="check-grupo">
+      <div class="check-grupo-titulo"><span class="ico">💉</span> Vacinas em dia</div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Gripe (influenza)</div>
+          <div class="check-quando"><strong>1 vez por ano</strong> — todo outono</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Pneumonia, herpes-zóster e reforço de tétano</div>
+          <div class="check-quando"><strong>Conforme a médica</strong> — proteção importante na terceira idade</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="check-grupo">
+      <div class="check-grupo-titulo"><span class="ico">👩‍⚕️</span> Acompanhamento geral</div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Clínico geral ou geriatra</div>
+          <div class="check-quando"><strong>A cada 6 meses</strong> — quem olha o conjunto e ajusta tudo</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-conteudo">
+          <div class="check-nome">Revisar a lista de remédios e suplementos</div>
+          <div class="check-quando"><strong>Em toda consulta</strong> — levar esta folha junto</div>
+        </div>
+      </div>
     </div>
 
   </div>
